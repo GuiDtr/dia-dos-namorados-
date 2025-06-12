@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Feliz Dia dos Namorados, Elen ❤️" />
+  <meta property="og:description" content="Uma homenagem de amor para você." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/exemplo/imagem-romantica.jpg" />
+  <title>Feliz Dia dos Namorados ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1c1c1c;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    h1 {
+      color: #ff4d6d;
+      margin-top: 30px;
+    }
+    .contador {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .declaracao {
+      max-width: 90%;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      white-space: pre-wrap;
+    }
+    .fotos img {
+      width: 80%;
+      border-radius: 15px;
+      margin: 20px 0;
+    }
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall 10s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-100vh) rotate(0); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://example.com/ma-belle-evangeline.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>Feliz Dia dos Namorados, Elen ❤️</h1>
+  <div class="contador" id="contador"></div>
+  <div class="fotos">
+    <img src="1000147489.png" alt="Foto 1">
+    <img src="1000147490.png" alt="Foto 2">
+  </div>
+  <div class="declaracao">
+    Para Elen
+
+Oi Elen, eu sei que deve estar estranhando esse presente numa data como essa, já que não namoramos mais, mas mesmo assim, eu quis te dar esse presente... (resto da declaração aqui)
+  </div>
+
+  <script>
+    const inicio = new Date("2024-09-18T00:00:00").getTime();
+    setInterval(() => {
+      const agora = new Date().getTime();
+      const tempo = agora - inicio;
+      const dias = Math.floor(tempo / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((tempo % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((tempo % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((tempo % (1000 * 60)) / 1000);
+      document.getElementById("contador").innerText =
+        `Eu te amo desde: ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+    }, 1000);
+
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 5 + Math.random() * 5 + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
